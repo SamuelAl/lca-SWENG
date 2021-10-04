@@ -4,5 +4,10 @@
         "lca-java/src"
     ],
     "java.project.outputPath": "bin",
-    "bazel.buildifierFixOnFormat": true
+    "bazel.buildifierFixOnFormat": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "e:\\java\\jars\\junit-4.13.1.jar",
+        "e:\\java\\jars\\hamcrest-core-1.3.jar"
+    ]
 }

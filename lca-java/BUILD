@@ -12,3 +12,10 @@ java_library(
         "src/TreeNode.java",
         ]
 )
+
+java_test(
+    name = "lca_test",
+    srcs = ["tests/LCATest.java"],
+    test_class = "LCATest",
+    deps = [":lca"]
+)

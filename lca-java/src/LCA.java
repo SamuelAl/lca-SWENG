@@ -6,6 +6,7 @@ public class LCA {
     private TreeNode solution;
 
     public LCA(int nodeA, int nodeB, TreeNode root) {
+        if (root == null) throw new IllegalArgumentException("Must provide a valid root");
         this.nodeA = nodeA;
         this.nodeB = nodeB;
         this.root = root;
