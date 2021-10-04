@@ -1,6 +1,14 @@
 java_binary(
-    name = "LCA",
-    srcs = glob([
-        "src/*.java",
-    ]),
+    name = "LCARunner",
+    srcs = ["src/App.java"],
+    main_class = "App",
+    deps = [":lca"],
+)
+
+java_library(
+    name = "lca",
+    srcs = [
+        "src/LCA.java",
+        "src/TreeNode.java",
+        ]
 )
