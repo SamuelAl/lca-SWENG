@@ -22,7 +22,13 @@ public class LCA {
         if (curr == null) return 0; 
         int count = 0;
         
-        if (curr.value == this.nodeA || curr.value == this.nodeB) count++;
+        if (curr.value == this.nodeA)  count++;
+        if (curr.value == this.nodeB)  count++;
+
+        if (count >= 2 && solution == null) {
+            solution = curr;
+            return count;
+        }
 
         for (TreeNode child : curr.children) {
             count += getLCARecursive(child);
