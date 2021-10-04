@@ -3,5 +3,6 @@
         "src",
         "lca-java/src"
     ],
-    "java.project.outputPath": "bin"
+    "java.project.outputPath": "bin",
+    "bazel.buildifierFixOnFormat": true
 }
