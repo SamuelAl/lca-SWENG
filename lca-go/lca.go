@@ -37,8 +37,15 @@ func FindLCARecursive(curr *TreeNode, a, b int, solution *Solution) int {
 		return count
 	}
 
-	if curr.value == a || curr.value == b {
+	if curr.value == a {
 		count++
+	}
+	if curr.value == b {
+		count++
+	}
+	if count >= 2 && solution.node == nil {
+		solution.node = curr
+		return count
 	}
 
 	for _, child := range curr.children {
