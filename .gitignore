@@ -1,2 +1,6 @@
 lca-java/bazel*/
 lca-go/bazel*/
+lca-java/bazel-app
+lca-java/bazel-bin
+lca-java/bazel-testlogs
+lca-java/bazel-out
