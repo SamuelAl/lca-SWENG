@@ -45,6 +45,26 @@ public class LCATest {
         assertNull("Missing node", lca.getLCA());
     }
 
+    @Test
+    public void testDegenerateTree() {
+        // Create degenerate tree.
+        TreeNode root = createDegenerateTree();
+
+        // Test different valid cases in degenerate tree.
+        LCA lca = new LCA(0, 1, root);
+        assertEquals("Root is LCA of itself and descendant", 0, lca.getLCA().value);
+
+        lca = new LCA(0, 2, root);
+        assertEquals("0 is LCA of itself and descendants", 0, lca.getLCA().value);
+
+        lca = new LCA(1, 2, root);
+        assertEquals("1 is LCA of itself and descendant", 1, lca.getLCA().value);
+
+        // Test invalid cases in degenerate tree
+        lca = new LCA(2, 6, root);
+        assertNull("Missing node", lca.getLCA());
+    }
+
     // Helper methods
     private  TreeNode createSampleTree() {
         /**
@@ -72,6 +92,30 @@ public class LCATest {
         child1.addChild(child3);
         child1.addChild(child4);
         child1.addChild(child5);
+
+        return root;
+    }
+
+    private  TreeNode createDegenerateTree() {
+        /**
+         * Creates sample tree structure for tests:
+         * 
+         *          0
+         *         / 
+         *        /   
+         *       1     
+         *      /
+         *     / 
+         *    2  
+         */
+        
+
+        TreeNode root = new TreeNode(0);
+        TreeNode child1 = new TreeNode(1);
+        TreeNode child2 = new TreeNode(2);
+
+        root.addChild(child1);
+        child1.addChild(child2);
 
         return root;
     }
