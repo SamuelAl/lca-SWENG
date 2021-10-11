@@ -22,7 +22,7 @@ docker pull samalarco/bazel
 In order to run the testing environment, first run the above docker image. We mount our work directory to have access to the our Java source files.
 
 ```console
-docker run --rm -it -v $PWD/lca-java:/usr/src/app samalarco/bazel
+docker run --rm -it -v $PWD:/usr/src/app samalarco/bazel
 ```
 
 Once we have our testing environment running, we can use Bazel to run and test the project:
