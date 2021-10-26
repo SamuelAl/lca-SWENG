@@ -31,6 +31,18 @@ public class LCATest {
         assertArrayEquals("Node 6 is LCA of 6 and 7.", new int[]{6}, lca.findLCA(6, 7));
     }
 
+    @Test
+    public void testDegenerateDAG() {
+        EdgeWeightedDigraph graph = createDegenerateDigraph();
+        LCA lca = new LCA(graph);
+        
+        assertArrayEquals("Node 1 is ancestor of itself.", new int[]{1}, lca.findLCA(1, 1));
+        assertArrayEquals("Node 1 is LCA of 1 and 2.", new int[]{1}, lca.findLCA(1, 2));
+        assertArrayEquals("Node 1 is LCA of 1 and 4.", new int[]{1}, lca.findLCA(1, 4));
+        assertArrayEquals("Node 2 is LCA of 2 and 4.", new int[]{2}, lca.findLCA(2, 4));
+
+    }
+
     /**
      * Creates sample digraph to be used in testing.
      * @return Test graph.
@@ -61,6 +73,23 @@ public class LCATest {
         testGraph.addEdge(new DirectedEdge(4, 8, weight));
         testGraph.addEdge(new DirectedEdge(6, 7, weight));
         testGraph.addEdge(new DirectedEdge(7, 4, weight));
+        return testGraph;
+    }
+
+    public EdgeWeightedDigraph createDegenerateDigraph() {
+        /**
+         * Test Graph:
+         * 
+         * 1 -->-- 2 -->-- 3 -->-- 4
+         * 
+         */
+
+        final int weight = 1; // Constant weight used.
+
+        EdgeWeightedDigraph testGraph = new EdgeWeightedDigraph();
+        testGraph.addEdge(new DirectedEdge(1, 2, weight));
+        testGraph.addEdge(new DirectedEdge(2, 3, weight));
+        testGraph.addEdge(new DirectedEdge(3, 4, weight));
         return testGraph;
     }
    
