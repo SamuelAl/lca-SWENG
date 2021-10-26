@@ -9,7 +9,8 @@ java_library(
     name = "lca",
     srcs = [
         "src/LCA.java",
-        "src/TreeNode.java",
+        "src/DirectedEdge.java",
+        "src/EdgeWeightedDigraph.java",
         ]
 )
 

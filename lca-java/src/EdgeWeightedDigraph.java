@@ -5,14 +5,12 @@ import java.util.*;
  */
 public class EdgeWeightedDigraph {
 
-    private int vertices;
     private int edges;
     private Map<Integer, Set<DirectedEdge>> adjMap;
 
     // Constructor
-    public EdgeWeightedDigraph(int vertices) {
-        adjMap = new HashMap<Integer, Set<DirectedEdge>>(vertices);
-        this.vertices = vertices;
+    public EdgeWeightedDigraph() {
+        adjMap = new HashMap<Integer, Set<DirectedEdge>>();
         this.edges = 0;
     }
 
@@ -35,7 +33,6 @@ public class EdgeWeightedDigraph {
             adjMap.put(origin, newBag);
             edges++;
         }
-        
     }
 
     /**
@@ -43,12 +40,12 @@ public class EdgeWeightedDigraph {
      * @return number of vertices
      */
     public int vertexCount() {
-        return vertices;
+        return adjMap.size();
     }
     
     /**
      * Gets number of edges in graph
-     * @return number ofedges
+     * @return number of edges
      */
     public int edgeCount() {
         return edges;
