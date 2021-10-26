@@ -29,6 +29,7 @@ public class LCATest {
         assertArrayEquals("Node 2 is LCA of 3 and 4.", new int[]{2}, lca.findLCA(3, 4));
         assertArrayEquals("Nodes 3 and 4 are LCA of 5 and 8.", new int[]{3,4}, lca.findLCA(5, 8));
         assertArrayEquals("Node 6 is LCA of 6 and 7.", new int[]{6}, lca.findLCA(6, 7));
+        assertArrayEquals("No node is LCA of 1 and 6.", new int[]{}, lca.findLCA(1, 6));
     }
 
     @Test
