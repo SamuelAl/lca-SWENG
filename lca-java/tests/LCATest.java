@@ -76,6 +76,10 @@ public class LCATest {
         return testGraph;
     }
 
+    /**
+     * Creates a degenerate (linear) DAG for testing.
+     * @return Test graph
+     */
     public EdgeWeightedDigraph createDegenerateDigraph() {
         /**
          * Test Graph:
