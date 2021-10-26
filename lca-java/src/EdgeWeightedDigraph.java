@@ -32,6 +32,7 @@ public class EdgeWeightedDigraph {
             adjMap.put(origin, newBag);
             edges++;
         }
+        addVertex(edge.to);
     }
     /**
      * Adds a new vertex to the graph.
@@ -62,10 +63,22 @@ public class EdgeWeightedDigraph {
 
     /**
      * Gets all vertices in the graph.
-     * @return
+     * @return vertices
      */
-    public Iterable<Integer> getVertices() {
+    public Collection<Integer> getVertices() {
         return adjMap.keySet();
+    }
+
+    /**
+     * Gets all edges and returns them as a set of edges.
+     * @return edges
+     */
+    public Collection<DirectedEdge> getEdges() {
+        Set<DirectedEdge> edges = new TreeSet<DirectedEdge>();
+        for (Set<DirectedEdge> edgeSet : adjMap.values()) {
+            edges.addAll(edgeSet);
+        }
+        return edges;
     }
 
     /**
