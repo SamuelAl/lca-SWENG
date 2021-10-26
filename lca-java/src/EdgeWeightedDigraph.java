@@ -24,14 +24,23 @@ public class EdgeWeightedDigraph {
         if (adjMap.containsKey(origin)) {
         	int prevCount = adjMap.get(origin).size();
             adjMap.get(origin).add(edge);
-            if (adjMap.get(origin).size() > prevCount) edges++;
-            
+            if (adjMap.get(origin).size() > prevCount) edges++; 
         }
         else {
             Set<DirectedEdge> newBag = new TreeSet<DirectedEdge>();
             newBag.add(edge);
             adjMap.put(origin, newBag);
             edges++;
+        }
+    }
+    /**
+     * Adds a new vertex to the graph.
+     * @param v vertex to add
+     */
+    public void addVertex(int v) {
+        if (!adjMap.containsKey(v)) {
+            Set<DirectedEdge> newBag = new TreeSet<DirectedEdge>();
+            adjMap.put(v, newBag);
         }
     }
 
