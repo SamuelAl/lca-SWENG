@@ -1,7 +1,9 @@
 ## Introduction
 
-Implementation of n-ary tree Lowest Common Ancestor algorithm in Java.
+Implementation of DAG Lowest Common Ancestor algorithm in Java.
 This is done as part of an assignment for the Sofware Engineering course, Year 3, Trinity College Dublin.
+
+Definition of LCA for a Directed Acyclic Graph: The LCA between two nodes u and v in a graph is the deepest node w, such that it is an ancestor of both u and v. In case DAG is a special case of a graph, the might be 0, 1, or more LCAs between any two nodes. However, in an undirected tree, there will be exactly one LCA candidate. (Baeldung)[https://www.baeldung.com/cs/lowest-common-ancestor-acyclic-graph]
 
 ## Testing
 
