@@ -6,7 +6,7 @@ import java.util.*;
 public class EdgeWeightedDigraph {
 
     private int edges;
-    private Map<Integer, Set<DirectedEdge>> adjMap;
+    private Map<Integer, Set<DirectedEdge>> adjMap; 
 
     // Constructor
     public EdgeWeightedDigraph() {
@@ -15,7 +15,7 @@ public class EdgeWeightedDigraph {
     }
 
     /**
-     * Adds and edge to the graph representation
+     * Adds an edge to the graph representation.
      * @param edge edge to add
      */
     public void addEdge(DirectedEdge edge) {
@@ -58,6 +58,14 @@ public class EdgeWeightedDigraph {
      */
     public int edgeCount() {
         return edges;
+    }
+
+    /**
+     * Gets all vertices in the graph.
+     * @return
+     */
+    public Iterable<Integer> getVertices() {
+        return adjMap.keySet();
     }
 
     /**
